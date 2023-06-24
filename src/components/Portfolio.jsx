@@ -1,7 +1,23 @@
 import React from 'react'
-import { hoobank, delicious, jsm_headphones, cryptoverse, pueblo_serrano } from '../img'
+import { hoobank, delicious, jsm_headphones, cryptoverse, pueblo_serrano, portfolio, airbnbClone, netflixClone} from '../img'
 
 const PORTFOLIO = [
+    {
+        title: 'Netflix Clone',
+        desc: 'This is a repository for a FullStack Netflix Clone using React, NextJS, TailwindCSS, MongoDB & Prisma.',
+        link: 'https://github.com/Lucas-Palma/watch-movies-app',
+        link_arial_label : "Netflix Clone",
+        img: netflixClone,
+        img_alt: "Netflix clone home"
+    },
+    {
+        title: 'Airbnb Clone',
+        desc: 'This is a Airbnb clone built using Next.js, React, Tailwind, Prisma, MongoDB and NextAuth.',
+        link: 'https://github.com/Lucas-Palma/nextjs-airbnb-clone',
+        link_arial_label : "Airbnb Clone",
+        img: airbnbClone,
+        img_alt: "Airbnb clone home"
+    },
     {
         title: 'Cryptoverse',
         desc: 'Cryptoverse is a crypto app built with React JS. It uses Redux Toolkit for API integration.',
@@ -12,7 +28,7 @@ const PORTFOLIO = [
     },
     {
         title: 'JSM Headphones',
-        desc: 'JSM Headphones is a ecommerce store built with React JS and Next JS. It uses Stripe as CMS for products management.',
+        desc: 'JSM Headphones is a ecommerce built with React JS and Next JS. It uses Stripe as CMS for products management.',
         link: 'https://github.com/Lucas-Palma/ecommerce-reactjs-nextjs',
         link_arial_label : "JSM Headphones ecommerce",
         img: jsm_headphones,
@@ -34,12 +50,20 @@ const PORTFOLIO = [
         img: delicious,
         img_alt: "Delicious app"
     },
+    {
+        title: 'Personal Portfolio',
+        desc: 'Here you can see the Github repository of this website. It was built with React JS using Vite.js.',
+        link: 'https://github.com/Lucas-Palma/portfolio',
+        link_arial_label : "Portfolio",
+        img: portfolio,
+        img_alt: "Portfolio home section"
+    },
 ]
 
 const OTHER_PROJECTS = [
     {
         title: 'Pueblo Serrano',
-        desc: 'Pueblo Serrano is delicatessen located in Villa Allende, Córdoba. I built their site using Webflow.',
+        desc: 'Pueblo Serrano is a delicatessen located in Villa Allende, Córdoba. I built their site using Webflow.',
         link: 'https://puebloserrano.com/',
         link_arial_label : "Pueblo Serrano",
         img: pueblo_serrano,
@@ -50,21 +74,21 @@ const OTHER_PROJECTS = [
 const Portfolio = () => {
   return ( 
     <div>
-        <section class="portfolio" id="portfolio">
-            <div class="main-text">
+        <section className="portfolio" id="portfolio">
+            <div className="main-text">
                 <p>Portfolio</p>
                 <h2><span>React JS</span> Projects</h2>
             </div>
 
-            <div class="portfolio-content">
+            <div className="portfolio-content">
                 {
-                    PORTFOLIO.map(project => (
-                        <div class="row">
+                    PORTFOLIO.map((project, i) => (
+                        <div key={i} className="row">
                             <img src={project.img} alt={project.img_alt}/>
-                            <div class="layer">
+                            <div className="layer">
                                 <h5>{project.title}</h5>
                                 <p>{project.desc}</p>
-                                <a href={project.link} target="_blank" aria-label={project.link_arial_label}><i class='bx bx-link-external'></i></a>
+                                <a href={project.link} target="_blank" aria-label={project.link_arial_label}><i className='bx bx-link-external'></i></a>
                             </div>
                         </div>
                     ))
@@ -72,19 +96,19 @@ const Portfolio = () => {
             </div>
         </section> 
         <section>
-        <div class="main-text">
+        <div className="main-text">
                 <h2><span>Other</span> Projects</h2>
             </div>
 
-            <div class="portfolio-content">
+            <div className="portfolio-content">
                 {
-                    OTHER_PROJECTS.map(project => (
-                        <div class="row">
+                    OTHER_PROJECTS.map((project, i) => (
+                        <div key={i} className="row">
                             <img src={project.img} alt={project.img_alt}/>
-                            <div class="layer">
+                            <div className="layer">
                                 <h5>{project.title}</h5>
                                 <p>{project.desc}</p>
-                                <a href={project.link} target="_blank" aria-label={project.link_arial_label}><i class='bx bx-link-external'></i></a>
+                                <a href={project.link} target="_blank" aria-label={project.link_arial_label}><i className='bx bx-link-external'></i></a>
                             </div>
                         </div>
                     ))

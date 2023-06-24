@@ -36,10 +36,10 @@ header{
     width: 100%;
     top: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 10;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background: rgba(0, 0, 0, 0.7);
     padding: 22px 15%;
     border-bottom: 1px solid transparent;
@@ -74,13 +74,35 @@ span{
 }
 
 #menu-icon{
-    font-size: 35px;
+    font-size: 4rem;
     color: var(--text-color);
-    z-index: 10001;
+    background: transparent;
+    border: none;
+    z-index: 100;
     cursor: pointer;
-    margin-left: 25px;
     display: none;
 }
+
+.menu-box {
+    position: relative;
+}
+
+.menu-links{
+    position: absolute;
+    z-index: 999;
+    top: 5rem;
+    right: 0.25rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+}
+
+.menu-links a{
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    
+}
+
 
 /* SECTIONS */
 
@@ -200,11 +222,11 @@ section{
     transform: scale(1.1) translateY(5px);
 }
 
-header.sticky{
+/* header.sticky{
     background: var(--bg-color);
     border-bottom: 1px solid #ffffff1a;
     padding: 12px 15%;
-}
+} */
 
 .about{
     display: grid;
@@ -451,7 +473,7 @@ header.sticky{
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    margin: 0px 15px ;
+    margin: 10px ;
     transition: all .45s ease;
 }
 
@@ -542,7 +564,7 @@ header.sticky{
     height: 60px;
     background: var(--main-color);
     box-shadow: 1px 2px 4px black;
-    z-index: 1000;
+    z-index: 9999;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -642,7 +664,6 @@ header.sticky{
     .box{
         min-height: 700px;
     }
-
 }
 
 @media (max-width: 960px){
@@ -679,30 +700,14 @@ header.sticky{
         transform: scale(0.8);
     }
 
+    header {
+        align-items: center;
+        justify-content: right;
+    }
+
     .navlist{
-        position: absolute;
-        top: -1000px;
-        right: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        background: var(--bg-color);
-        text-align: left;
-        transition: all .45s ease;
+        display: none;
     }
-
-    .navlist a{
-        display: block;
-        margin: 17px;
-        font-size: 20px;
-        transition: all .45s ease;
-        color: var(--text-color)
-    }
-
-    .navlist.open{
-        top: 100%;
-    }
-
     .slide{
         font-size: 0.75rem;
     }
@@ -739,6 +744,16 @@ header.sticky{
     }
     .portfolio-content{
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .button {
+        flex-direction: column;
+        align-items:flex-start;
+    }
+
+    .btn2 {
+        margin-left: 0;
+        margin-top: 1rem;
     }
 
 }
